@@ -6,3 +6,7 @@ from django.views.generic.edit import CreateView
 def home(request):
     items = Item.objects.all()
     return render(request, 'home.html', { 'items': items })
+
+class ItemsCreate(CreateView):
+    model = Item
+    fields = '__all__'
