@@ -7,11 +7,22 @@
     <h3>No items yet!</h3>
     <hr>
 {% else %}
-    <ul>
-        {% for item in items %}
-        <li>{{item.name}}</li>
+<table class="pure-table pure-table-striped">
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in items %} 
+        <tr>
+            <td>{{ item.name }}</td>
+            <td><a href="{% url 'items_delete' item.id %}">X</a></td>
+        </tr>
         {% endfor %}
-    </ul>
+    </tbody>
+</table>
 {% endif %}
 <a href="{% url 'items_create' %}" class="pure-button">Add A Wish Item</a>
 {% endblock %}

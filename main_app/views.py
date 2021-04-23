@@ -10,3 +10,7 @@ def home(request):
 class ItemsCreate(CreateView):
     model = Item
     fields = '__all__'
+
+def items_delete(request, item_id):
+    Item.objects.get(id=item_id).delete()
+    return redirect('/')
