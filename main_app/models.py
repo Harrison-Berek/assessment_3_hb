@@ -4,7 +4,7 @@ from django.urls import reverse
 # Create your models here.
 
 class Item(models.Model):
-    item = models.TextField(max_length=50)
+    name = models.TextField(max_length=50)
 
     def __str__(self):
         return self.item
